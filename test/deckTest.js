@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Deck = require('../lib/Deck');
+const Card = require('../lib/Card');
 
 describe('Deck', function() {
   it('has an array of 52 cards', function () {
@@ -17,7 +18,7 @@ describe('Deck', function() {
     it('should remove a card from the deck', function () {
       let deck = new Deck();
       let card = deck.deal();
-      assert.equal(51, deck.cards.length);
+      assert.equal(deck.cards.length, 51);
       let matchingCard = deck.cards.find(otherCard => {
         return otherCard.suit == card.suit && otherCard.value == card.value;
       });
